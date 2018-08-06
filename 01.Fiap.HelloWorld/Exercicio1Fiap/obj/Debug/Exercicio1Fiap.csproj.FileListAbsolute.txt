@@ -1,0 +1,6 @@
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\bin\Debug\Exercicio1Fiap.exe.config
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\bin\Debug\Exercicio1Fiap.exe
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\bin\Debug\Exercicio1Fiap.pdb
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\obj\Debug\Exercicio1Fiap.csproj.CoreCompileInputs.cache
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\obj\Debug\Exercicio1Fiap.exe
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\Exercicio1Fiap\obj\Debug\Exercicio1Fiap.pdb

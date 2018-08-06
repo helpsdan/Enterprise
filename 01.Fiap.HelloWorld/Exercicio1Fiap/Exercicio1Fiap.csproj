@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9D57CEC-C160-46CE-B5C9-6683BC07B089}</ProjectGuid>
+    <ProjectGuid>{7CF6FA43-5196-45AC-8DB2-82CD39BDEA49}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_01.Fiap.HelloWorld.UI</RootNamespace>
-    <AssemblyName>01.Fiap.HelloWorld.UI</AssemblyName>
+    <RootNamespace>Exercicio1Fiap</RootNamespace>
+    <AssemblyName>Exercicio1Fiap</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,26 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Aluno.cs" />
-    <Compile Include="Model\Genero.cs" />
-    <Compile Include="Model\ITrabalhador.cs" />
-    <Compile Include="Model\Pessoa.cs" />
-    <Compile Include="Model\Professor.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Model\Conta.cs" />
+    <Compile Include="Model\ContaCorrente.cs" />
+    <Compile Include="Model\ContaPoupanca.cs" />
+    <Compile Include="Model\IContaInvestimento.cs" />
+    <Compile Include="Model\TipoConta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="obj\Debug\01.Fiap.HelloWorld.UI.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\01.Fiap.HelloWorld.UI.csprojAssemblyReference.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

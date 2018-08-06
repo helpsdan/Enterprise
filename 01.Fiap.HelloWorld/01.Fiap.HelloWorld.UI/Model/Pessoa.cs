@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace _01.Fiap.HelloWorld.UI.Model
 {
-    class Pessoa
+
+    /*
+        Classe abstrata: não pode ser instanciada e pode conter métodos abstratos.
+         */
+    abstract class Pessoa
     {
+
+        // cprop -> tab tab
+        // Constructor
+        public Pessoa(string nome)
+        {
+            this._nome = nome;
+        }
+
         //Campos (atributos)
-        sprivate string _nome;
+        private string _nome;
         
         //Propriedades (gets e sets)
         public float Peso { get; set; }
@@ -24,5 +36,18 @@ namespace _01.Fiap.HelloWorld.UI.Model
                 }
             }
         }
+
+        public Genero Genero { get; set; }
+
+        // métodos
+        // virtual -> permite a sobrescrita de método
+        public virtual void Estudar()
+        {
+            Console.WriteLine("Pessoa estudando");
+        }
+
+        public abstract void FazerProva();
+
+
     }
 }

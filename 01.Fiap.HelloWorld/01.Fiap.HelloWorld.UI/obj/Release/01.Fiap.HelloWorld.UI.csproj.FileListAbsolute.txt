@@ -1,0 +1,6 @@
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\bin\Release\01.Fiap.HelloWorld.UI.exe.config
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\bin\Release\01.Fiap.HelloWorld.UI.exe
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\bin\Release\01.Fiap.HelloWorld.UI.pdb
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\obj\Release\01.Fiap.HelloWorld.UI.csproj.CoreCompileInputs.cache
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\obj\Release\01.Fiap.HelloWorld.UI.exe
+C:\Users\logonrmlocal\Desktop\Enterprise\01.Fiap.HelloWorld\01.Fiap.HelloWorld.UI\obj\Release\01.Fiap.HelloWorld.UI.pdb
