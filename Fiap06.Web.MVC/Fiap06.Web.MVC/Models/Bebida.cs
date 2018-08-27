@@ -19,6 +19,7 @@ namespace Fiap06.Web.MVC.Models
 
         public bool Destilado { get; set; }
 
+        [Display(Name = "Preço")]
         public decimal Preco { get; set; }
     }
 }

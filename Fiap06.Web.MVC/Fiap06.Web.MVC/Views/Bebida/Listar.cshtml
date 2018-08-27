@@ -1,0 +1,26 @@
+﻿@model  List<Fiap06.Web.MVC.Models.Bebida>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Destilado</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td> @item.BebidaId</td>
+        <td> @item.Nome</td>
+        <td> @item.Preco</td>
+        <td> @item.Destilado</td>
+        <td> @Html.ActionLink("Editar", "Atualizar", new { id = item.BebidaId })</td>
+        <td> @Html.ActionLink("Excluir", "Excluir", new { id = item.BebidaId })</td>
+    </tr>
+    }
+</table>
