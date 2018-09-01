@@ -13,12 +13,25 @@ namespace Fiap06.Web.MVC.Controllers
     {
         private BotecoContext _context = new BotecoContext();
 
-        [HttpPost]
-        public ActionResult Excluir(Bebida bebida)
+        [HttpGet]
+        public ActionResult Pesquisar(string nome)
         {
+            var lista = _context.Bebidas.Where(c => c.Nome.Contains(nome)).ToList();
+            //retornar para a página listar com a lista de bebidas
+            return View("Listar", lista);
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Excluir(int id)
+        {
+            // encontra a bebida a apagar
+            var bebida = _context.Bebidas.Find(id);
             // apaga a bebida do banco de dados
             _context.Bebidas.Remove(bebida);
             _context.SaveChanges();
+            TempData["msg"] = "Bebida excluída!";
             return RedirectToAction("Listar");
         }
 

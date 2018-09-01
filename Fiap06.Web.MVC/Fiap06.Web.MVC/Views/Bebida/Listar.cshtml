@@ -3,24 +3,73 @@
 @{
     ViewBag.Title = "Listar";
 }
-
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
 <h2>Listar</h2>
+
+@using (Html.BeginForm("Pesquisar", "Bebida", FormMethod.Get, new { @class = "form-inline"}))
+{
+<input type="text" name="nome" class="form-control" id="id-nome" placeholder="Digite um nome"/>
+<input type="submit" value="Pesquisar" class="btn btn-primary" />
+}
 
 <table class="table table-striped">
     <tr>
+        <th>Id</th>
         <th>Nome</th>
         <th>Preço</th>
         <th>Destilado</th>
+        <th></th>
+        <th></th>
     </tr>
     @foreach (var item in Model)
     {
-    <tr>
-        <td> @item.BebidaId</td>
-        <td> @item.Nome</td>
-        <td> @item.Preco</td>
-        <td> @item.Destilado</td>
-        <td> @Html.ActionLink("Editar", "Atualizar", new { id = item.BebidaId })</td>
-        <td> @Html.ActionLink("Excluir", "Excluir", new { id = item.BebidaId })</td>
-    </tr>
+        <tr>
+            <td> @item.BebidaId</td>
+            <td> @item.Nome</td>
+            <td>R$ @item.Preco</td>
+            @{
+                if (@item.Destilado == true)
+                {
+                    <td>Alcoólico</td>
+                }
+                else
+                {
+                    <td>Sem álcool</td>
+                }
+            }
+
+            <td> @Html.ActionLink("Editar", "Atualizar", new { id = item.BebidaId }, new { @class = "btn btn-info btn-xs"})</td>
+            <td><button onclick="codigoBebida.value = @item.BebidaId" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
+                Remover
+            </button></td>
+        </tr>
     }
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div> 
+            <div class="modal-body">
+               Deseja realmente apagar a bebida? Isso é irreversível.
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Excluir", "Bebida"))
+                {
+                    <input type="hidden" name="id" id="codigoBebida"/>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Remover</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
