@@ -1,0 +1,40 @@
+﻿@model Fiap07.Web.MVC.Models.Imovel
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Imóvel</h2>
+
+@Ajudante.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Endereco)
+        @Html.TextBoxFor(i => i.Endereco, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Valor)
+        @Html.TextBoxFor(i => i.Valor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Categoria)
+        @Html.DropDownListFor(i => i.CategoriaId,
+            ViewBag.categorias as SelectList,
+            "Selecione",
+            new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Escritura.Proprietario)
+        @Html.TextBoxFor(i => i.Escritura.Proprietario,
+            new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Escritura.NumeroCartorio)
+        @Html.TextBoxFor(i => i.Escritura.NumeroCartorio,
+            new { @class = "form-control" })
+    </div>
+    @Ajudante.Botao("Cadastrar")
+}
+

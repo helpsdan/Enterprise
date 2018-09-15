@@ -1,0 +1,42 @@
+﻿@model  List<Fiap07.Web.MVC.Models.Imovel>
+
+@{
+                /**/
+
+                ViewBag.Title = "Listar";
+}
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+<h2>Listar</h2>
+@using (Html.BeginForm("Pesquisar", "Imovel", FormMethod.Get, new { @class = "form-inline" }))
+{
+<div class="form-group">
+    @Html.DropDownList("CategoriaId", String.Empty)
+    @Ajudante.Botao("Pesquisar")
+</div>
+    
+}
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Endereço</th>
+        <th>Preço</th>
+        <th>Escritura</th>
+        <th>Categoria</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ImovelId</td>
+            <td>@item.Endereco</td>
+            <td>R$@item.Valor</td>
+            <td>@item.Escritura.NumeroCartorio</td>
+            <td>@item.Categoria.Nome</td>
+
+        </tr>
+    }
+</table>

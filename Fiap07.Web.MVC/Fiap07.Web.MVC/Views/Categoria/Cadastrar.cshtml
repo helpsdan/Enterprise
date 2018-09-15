@@ -1,0 +1,23 @@
+﻿@model Fiap07.Web.MVC.Models.Categoria
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Categoria</h2>
+
+@Ajudante.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Nome)
+        @Html.TextBoxFor(c => c.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Descricao)
+        @Html.TextAreaFor(c => c.Descricao, new { @class = "form-control" })
+    </div>
+   @Ajudante.Botao("Cadastrar")
+}
+
