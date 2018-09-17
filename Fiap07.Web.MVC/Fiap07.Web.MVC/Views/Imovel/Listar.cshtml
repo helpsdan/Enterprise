@@ -12,19 +12,21 @@
     </div>
 }
 <h2>Listar</h2>
-@using (Html.BeginForm("Pesquisar", "Imovel", FormMethod.Get, new { @class = "form-inline" }))
+
+@using (Html.BeginForm("Buscar", "Imovel", FormMethod.Get, new { @class = "form-inline"}))
 {
-<div class="form-group">
-    @Html.DropDownList("CategoriaId", String.Empty)
-    @Ajudante.Botao("Pesquisar")
-</div>
-    
+    @Html.DropDownList("categoriaId", ViewBag.categorias as SelectList,
+    "Selecione", new { @class = "form-control" })
+    @Ajudante.Botao("Buscar");
+
 }
-<table class="table table-striped">
+
+<table class="table table-striped" style="margin-top:30px">
     <tr>
         <th>Id</th>
         <th>Endereço</th>
         <th>Preço</th>
+        <th>Contrato</th>
         <th>Escritura</th>
         <th>Categoria</th>
     </tr>
@@ -34,6 +36,7 @@
             <td>@item.ImovelId</td>
             <td>@item.Endereco</td>
             <td>R$@item.Valor</td>
+            <td>@item.Contrato</td>
             <td>@item.Escritura.NumeroCartorio</td>
             <td>@item.Categoria.Nome</td>
 

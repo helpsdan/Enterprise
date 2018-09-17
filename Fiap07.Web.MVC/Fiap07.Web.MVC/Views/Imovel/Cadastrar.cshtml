@@ -26,6 +26,11 @@
             new { @class = "form-control" })
     </div>
     <div class="form-group">
+       @Html.LabelFor(i => i.Contrato)
+       @Html.EnumDropDownListFor(i => i.Contrato, "Selecione", new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
         @Html.LabelFor(i => i.Escritura.Proprietario)
         @Html.TextBoxFor(i => i.Escritura.Proprietario,
             new { @class = "form-control" })

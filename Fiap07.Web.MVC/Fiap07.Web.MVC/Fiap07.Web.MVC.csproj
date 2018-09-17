@@ -121,6 +121,7 @@
     <Compile Include="Models\Corretor.cs" />
     <Compile Include="Models\Escritura.cs" />
     <Compile Include="Models\Imovel.cs" />
+    <Compile Include="Models\TipoContrato.cs" />
     <Compile Include="Persistencia\ImobiliariaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

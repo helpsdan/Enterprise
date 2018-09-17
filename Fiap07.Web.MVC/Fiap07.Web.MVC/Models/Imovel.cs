@@ -10,7 +10,7 @@ namespace Fiap07.Web.MVC.Models
         public int ImovelId { get; set; }
         public string Endereco { get; set; }
         public decimal Valor { get; set; }
-
+        public TipoContrato? Contrato { get; set; }
         //Relacionamentos
         public Escritura Escritura { get; set; }
         public int EscrituraId { get; set; }

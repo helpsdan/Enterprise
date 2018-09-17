@@ -12,24 +12,43 @@ namespace Fiap07.Web.MVC.Controllers
     {
         private ImobiliariaContext _context = new ImobiliariaContext();
 
+
+
         [HttpGet]
-        public ActionResult Pesquisar()
+        public ActionResult Listar()
         {
+            CarregarCategorias();
             // Incluide -> carrega os dados do relacionamento
             var lista = _context.Imoveis.Include("Categoria").ToList();
-            ViewBag.categorias = new SelectList(lista, "CategoriaId", "Nome");
-            //retornar para a página listar com a lista de bebidas
+            var lista2 = _context.Imoveis.Include("Escritura").ToList();
+            //Retornar uma lista
             return View(_context.Imoveis.ToList());
+        }
+
+        [HttpGet]
+        public ActionResult Buscar(int? categoriaId)
+        {
+            CarregarCategorias();
+            // Incluide -> carrega os dados do relacionamento
+            var lista = _context.Imoveis.Include("Categoria").Where(c => c.CategoriaId == categoriaId || categoriaId == null).ToList();
+            var lista2 = _context.Imoveis.Include("Escritura").ToList();
+            //retornar para a página listar com a lista de bebidas
+            return View("Listar", lista);
         }
 
         [HttpGet]
         public ActionResult Cadastrar()
         {
+            CarregarCategorias();
+            return View();
+        }
+
+        private void CarregarCategorias()
+        {
             //Buscar por todas as categorias
             var lista = _context.Categorias.ToList();
             //Enviar para a tela a lista de categorias para o select
             ViewBag.categorias = new SelectList(lista, "CategoriaId", "Nome");
-            return View();
         }
 
         [HttpPost]
@@ -41,16 +60,6 @@ namespace Fiap07.Web.MVC.Controllers
             return RedirectToAction("Cadastrar");
         }
 
-
-        [HttpGet]
-        public ActionResult Listar()
-        {
-            // Incluide -> carrega os dados do relacionamento
-            var lista = _context.Imoveis.Include("Categoria").ToList();
-            var lista1 = _context.Imoveis.Include("Escritura").ToList();
-            //Retornar uma lista
-            return View(_context.Imoveis.ToList());
-        }
 
     }
 }
