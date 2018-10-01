@@ -1,0 +1,6 @@
+Criar o Projeto ASP.NET e Instalar o EF
+Criar Models e DBContext
+Configurar o web.config e global.asax
+Criar o TimeRepository
+Criar o UnitOfWork
+Criar o Controller e View

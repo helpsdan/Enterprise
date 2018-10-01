@@ -1,0 +1,23 @@
+﻿@model Fiap08.Web.MVC.Models.Time
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+
+@Ajudante.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(t => t.Nome)
+        @Html.TextBoxFor(t => t.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(t => t.Estadio)
+        @Html.LabelFor(t => t.Estadio)
+    </div>
+
+    @Ajudante.Botao("Cadastrar")
+}
